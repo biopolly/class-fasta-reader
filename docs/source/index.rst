@@ -46,24 +46,6 @@ is_fasta(filename): проверяет, является ли файл корр�
 
 read_records(filename): читает FASTA файл и возвращает генератор объектов Seq
 
-Пример использования
---------------------
-
-.. code-block:: python
-# Создание последовательности
-   seq = Seq("ATGCATGC", "test_sequence")
-   print(seq)
-   print(f"Length: {len(seq)}")
-   print(f"Type: {seq.alphabet()}")
-
-   # Чтение FASTA файла
-   reader = FastaReader()
-   if reader.is_fasta("rna.fna"):
-       for record in reader.read_records("rna.fna"):
-           print(f"Header: {record.header}")
-           print(f"Length: {len(record)}")
-           print(f"Type: {record.alphabet()}")
-
 
 Требования
 ---------------------
