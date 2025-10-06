@@ -35,6 +35,8 @@
             
   <section id="bioseq-analyzer-documentation">
 <h1>BioSeq Analyzer Documentation<a class="headerlink" href="#bioseq-analyzer-documentation" title="Permalink to this heading">¶</a></h1>
+<section id="uml-docs-build-html-static-2025-10-06-003951-png">
+<h2>UML диаграма docs/build/html/_static/Снимок экрана 2025-10-06 003951.png<a class="headerlink" href="#uml-docs-build-html-static-2025-10-06-003951-png" title="Permalink to this heading">¶</a></h2>
 <p>BioSeq Analyzer - это Python библиотека для работы с биологическими последовательностями в формате FASTA.</p>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Содержание:</span></p>
@@ -48,17 +50,73 @@
 </li>
 </ul>
 </div>
+</section>
 <section id="id1">
 <h2>Основные возможности<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>Чтение FASTA файлов</p></li>
 <li><p>Определение типа последовательности (нуклеотид/протеин)</p></li>
-<li><p>Расчет GC-состава</p></li>
 <li><p>Статистический анализ</p></li>
 </ul>
 </section>
+<section id="seq">
+<h2>Класс Seq<a class="headerlink" href="#seq" title="Permalink to this heading">¶</a></h2>
+<p>Класс Seq представляет биологическую последовательность (нуклеотидную или аминокислотную).</p>
+<p>Параметры:
+sequence (str): нуклеотидная или аминокислотная последовательность</p>
+<p>header (str): заголовок FASTA записи (информация о последовательности)</p>
+<p>Методы:
+__str__(): возвращает строковое представление последовательности в формате FASTA</p>
+<p>__len__(): возвращает длину последовательности</p>
+<p>alphabet(): определяет тип последовательности (нуклеотидная, белковая или неизвестная)</p>
+</section>
+<section id="fastareader">
+<h2>Класс FastaReader<a class="headerlink" href="#fastareader" title="Permalink to this heading">¶</a></h2>
+<p>Класс для чтения и анализа FASTA файлов.</p>
+<p>Методы:
+is_fasta(filename): проверяет, является ли файл корректным FASTA файлом</p>
+<p>read_records(filename): читает FASTA файл и возвращает генератор объектов Seq</p>
+</section>
 <section id="id2">
-<h2>Быстрый старт<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<h2>Требования<a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
+<p>Python 3.6+</p>
+</section>
+<section id="id3">
+<h2>Установка<a class="headerlink" href="#id3" title="Permalink to this heading">¶</a></h2>
+<p>Просто скопируйте файлы проекта в вашу рабочую директорию.</p>
+</section>
+<section id="fasta">
+<h2>Формат FASTA<a class="headerlink" href="#fasta" title="Permalink to this heading">¶</a></h2>
+<p>FASTA формат - это текстовый формат для представления нуклеотидных или белковых последовательностей, где:</p>
+<p>Строка начинающаяся с &gt; содержит описание последовательности</p>
+<p>Последующие строки содержат саму последовательность</p>
+</section>
+<section id="id4">
+<h2>Пример:<a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
+<p>text
+&gt;sequence_1
+ATGCGTACGTAGCTAGCTAGCTAGC
+&gt;sequence_2
+MVLSPADKTNVKAAWGKVGAHAGEYGAEALERMFLSFPTTK</p>
+</section>
+<section id="id5">
+<h2>Функциональность<a class="headerlink" href="#id5" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Автоматическое определение типа последовательности (ДНК/РНК/белок)</p></li>
+<li><p>Поддержка больших файлов через использование генераторов</p></li>
+<li><p>Проверка корректности формата FASTA</p></li>
+<li><p>Простое извлечение метаинформации о последовательностях</p></li>
+</ul>
+</section>
+<section id="id6">
+<h2>Примечания<a class="headerlink" href="#id6" title="Permalink to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Для нуклеотидных последовательностей поддерживаются символы: A, T, G, C, U</p></li>
+<li><p>Для белковых последовательностей поддерживаются стандартные 20 аминокислот</p></li>
+</ul>
+</section>
+<section id="id7">
+<h2>Быстрый старт<a class="headerlink" href="#id7" title="Permalink to this heading">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">bioseq</span><span class="w"> </span><span class="kn">import</span> <span class="n">FastaReader</span><span class="p">,</span> <span class="n">Seq</span>
 
 <span class="c1"># Создание последовательности</span>
