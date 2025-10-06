@@ -1,6 +1,8 @@
 BioSeq Analyzer Documentation
 =============================
 
+UML диаграма docs/build/html/_static/Снимок экрана 2025-10-06 003951.png
+-----------
 BioSeq Analyzer - это Python библиотека для работы с биологическими последовательностями в формате FASTA.
 
 .. toctree::
